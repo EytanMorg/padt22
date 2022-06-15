@@ -19,7 +19,7 @@ RUN mkdir /root/.ssh/
 ADD id_rsa /root/.ssh/id_rsa
 RUN chmod 400 /root/.ssh/id_rsa
 RUN touch /root/.ssh/known_hosts
-RUN ./etc/init.d/ssh start && ssh-keyscan gitlab.fdmci.hva.nl >> /root/.ssh/known_hosts
-RUN git clone git@gitlab.fdmci.hva.nl:mohunlr/pad_t22.git
+RUN ./etc/init.d/ssh start && ssh-keyscan github.com >> /root/.ssh/known_hosts
+RUN git clone git@github.com:EytanMorg/padt22.git
 
-CMD cd /pad_t22 && git pull && apache2ctl -D FOREGROUND
+CMD cd /padt22 && git pull && apache2ctl -D FOREGROUND
