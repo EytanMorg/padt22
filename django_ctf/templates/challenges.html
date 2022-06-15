@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% autoescape off %}
+{% for challenge in challenges %}
+<div class="row">
+  <div class="card shadow challenge-card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <h3 class="card-title">{{ challenge.0 }}</h3>
+          <p class="card-text">
+            {{ challenge.2 }}
+          </p>
+          <table class="m0 p0">
+            {% autoescape off %}
+            <tr>
+              <td>Difficulty:</td>
+              <td>{{ challenge.3 }}{% endautoescape %}</td>
+            </tr>
+          </table>
+          {% if challenge.4 %}
+          <p>Download: <a href="/static/challenge-files/{{ challenge.0 }}/{{ challenge.4 }}" download>{{ challenge.4 }}</a></p>
+          {% endif %}
+        </div>
+        <div class="col">
+          <form method="post">
+            {% csrf_token %}
+            {% for item in form %}
+            <div class="form-group">
+              {{ item.label_tag }}
+              {{ item }}
+            </div>
+            {% endfor %}
+            <button type="submit" name="submit" value="{{ challenge.0 }}" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{{javascript}}
+{% endautoescape %}
+{% endblock %}

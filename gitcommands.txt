@@ -1,0 +1,6 @@
+commando's om data toe te voegen aan git
+1. git add . # voegt alle bestanden toe aan de file datbase, de "." betekent alle nieuwe bestanden
+2. git commit -m # voegt een bericht toe met wat er aangepast/toegevoegd is.
+3. git push origin <insert_your_name> # upload de bestanden met comment naar git
+4. maak op gitlab een merge request aan.
+

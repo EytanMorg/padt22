@@ -1,0 +1,4 @@
+__pycache__/
+
+docker files/web/id_rsa
+docker files/web/id_rsa.pub

@@ -1,0 +1,9 @@
+maak een ssh keypair aan:
+ssh-keygen -t rsa -C je_gitlab_email@hva.nl
+
+sla de key op in de dezelfde map als de dockerfile
+
+ga in de cli naar de map van de dockerfile
+maak de docker image:
+
+sudo docker build -t apache-django-ctf .
