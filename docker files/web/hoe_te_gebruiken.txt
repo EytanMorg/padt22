@@ -1,5 +1,5 @@
 maak een ssh keypair aan:
-ssh-keygen -t rsa -C je_gitlab_email@hva.nl
+ssh-keygen -t rsa -C account/devicename
 
 sla de key op in de dezelfde map als de dockerfile
 
